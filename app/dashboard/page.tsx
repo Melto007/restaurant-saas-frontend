@@ -9,10 +9,15 @@ import Header from "@/modules/auth/components/Header"
 // import MainContent from "@/modules/auth/components/MainContent";
 
 export default function Page() {
-    const winW      = useWindowWidth();
-    const isDesktop = winW >= DESKTOP_BP;
-    const isMobile  = winW < MOBILE_BP;
+    const [mounted, setMounted] = useState(false)
 
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    const winW      = useWindowWidth();
+    const isDesktop = winW !== null && winW >= DESKTOP_BP;
+    const isMobile  = winW !== null && winW < MOBILE_BP;
 
     const [collapsed,   setCollapsed]   = useState(false);
     const [drawerOpen,  setDrawerOpen]  = useState(false);
@@ -34,6 +39,8 @@ export default function Page() {
     const [profileName,   setProfileName]   = useState("");
     const [profileRole,   setProfileRole]   = useState("Manager");
     const [profileStatus, setProfileStatus] = useState("Active");
+
+    if (!mounted || winW === null) return null
 
     return (
         <div style={{

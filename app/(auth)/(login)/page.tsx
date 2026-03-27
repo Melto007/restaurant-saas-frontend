@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import Input from '@/modules/auth/components/Input'
+import LoginForm from '@/modules/auth/pages/LoginForm'
 
 const Login = () => {
     return (
@@ -38,42 +38,7 @@ const Login = () => {
                     <h1 className="text-3xl font-bold mb-2" style={{ color: '#FFC34A' }}>Welcome Back</h1>
                     <p className="mb-8 text-sm" style={{ color: '#A0A0A0' }}>Sign in to your Restaurant Dashboard</p>
 
-                    <form className="space-y-6">
-                        {/* Error Message */}
-                        <div className="p-4 rounded-lg bg-[#3d2626] border border-red-700 text-red-200">
-                            <p className="text-sm font-medium">Invalid email or password</p>
-                        </div>
-
-                        <Input
-                            label="Email Address"
-                            type="email"
-                            placeholder="Enter your email"
-                        />
-
-                        <Input
-                            label="Password"
-                            type="password"
-                            placeholder="Enter your password"
-                        />
-
-                        {/* Remember Me */}
-                        <div className="flex justify-between items-center text-sm">
-                            <label className="flex items-center" style={{ color: '#A0A0A0' }}>
-                                <input type="checkbox" className="mr-2" />
-                                Remember me
-                            </label>
-                            <Link href="#" style={{ color: '#4CBF67' }} className="hover:underline">Forgot password?</Link>
-                        </div>
-
-                        {/* Submit Button */}
-                        <button
-                            type="submit"
-                            className="w-full text-white font-semibold py-2 rounded-lg hover:shadow-lg transition duration-300"
-                            style={{ backgroundImage: 'linear-gradient(to right, #FFC34A, #FF6B38)' }}
-                        >
-                            Sign In
-                        </button>
-                    </form>
+                    <LoginForm />
 
                     {/* Sign Up Link */}
                     <p className="text-center mt-6 text-sm" style={{ color: '#A0A0A0' }}>

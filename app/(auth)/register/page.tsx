@@ -107,7 +107,7 @@ const Register = () => {
                     <p className="text-center mt-6 text-sm" style={{ color: '#A0A0A0' }}>
                         Already have an account?{" "}
                         <Link
-                            href="/login"
+                            href="/"
                             prefetch={false}
                             className="hover:underline font-semibold text-[#4CBF67]"
                         >
